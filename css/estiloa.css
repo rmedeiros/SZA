@@ -10,16 +10,20 @@ p:hover {
 div {
 	text-align:center;	
 }
-
 table#akta{
+	padding-bottom: 1em;
+	border-collapse: collapse;
+}
+table#akta,td ,th{
 	margin-left:auto;
 	margin-right:auto;
 	border:2px solid black;
-	padding-bottom: 1em;
-	border-collapse:separate; 
-	border-spacing:10px;
+	
+	
+	
 
 }
+
 
 input#jokalari{
 	width:300px;
