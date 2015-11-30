@@ -1,0 +1,27 @@
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+#nav {
+	background-color: #7ec0ee;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	line-height:30px;
+    height:250px;
+    width:350px;
+    float:left;
+    padding:70px 0px 30px 0px;
+}
+
+p:hover {
+    color: white;
+}
+
+div {
+	text-align:center;	
+}
+
+

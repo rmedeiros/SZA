@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<!-- Ez ahaztu zure javascript fitxategiaren izena script etiketaren src atributuan zehazten. -->
+		<script type="text/javascript" src="js/iruzkina.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/estiloa.css">
+	</head>
+	<body onload = "startTimer()">
+	<div id="header">
+		<h1>EHU/if-eko futbol liga</h1>
+	</div>
+	<div id="nav">
+		<form method="post" enctype="multipartform-data" id="iruzkinak" name="iruzkinak" onSubmit="return ikusIruzkinak()">
+			Eposta<br>
+			<input id="eposta" type="text" name="Eposta" onkeydown="return checkbox()">
+			<br>		
+			<br>
+			Pasahitza<br>
+			<input id="pasahitza" type="password" name="Pasahitza">
+			<br>		
+			<br>
+			<!--<input id="permisua" type="checkbox" name="Permisua" disabled="disabled">
+			Nahi duzu zure e-maila publikoa izatea?
+			<br>
+			<br>
+			Zure iruzkina:<br>
+			<textarea id="iruzkina" name="Iruzkina" rows="4" cols="30"></textarea>
+			<br>-->
+			<input id="bidali" name="Bidali" type="submit" value="Bidali">
+			<br>
+			<br>
+		</form>
+	</div>
+	<div id="section">
+		<a href="iruzkinak.html"> Ikusi iruzkinak </a>
+		<br>
+		<br>
+		<img id="img" src="https://pbs.twimg.com/profile_images/452381666649313280/1Y_pVkyh.jpeg" width="300px" height="300px"/>
+		<!--<button type="button" onclick="displayPreviousImage()">Aurrekoa</button>
+		<button type="button" onclick="displayNextImage()">Hurrengoa</button>-->
+	</div>
+	<div id="footer">
+	</div>
+</html>
