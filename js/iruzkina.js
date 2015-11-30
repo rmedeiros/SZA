@@ -65,5 +65,5 @@ function displayNextImage() {
 
           var images = [], x = -1;
           images[0] = "http://i0.wp.com/atombit.es/wp-content/uploads/2015/02/tienes_una_contrasena_y_lo_sabes.jpg?fit=1024%2C1024";
-          images[1] = "http://www.pintzap.com/pic/3107-voy-a-estar-en-tu-cena-de-empresa-y-lo-sabes";
+          images[1] = "http://www.pintzap.com/img/pics/t/600/humor-meme-ICi2cKM3ztpFGIL2o4.jpeg";
           images[2] = "https://pbs.twimg.com/profile_images/452381666649313280/1Y_pVkyh.jpeg";
