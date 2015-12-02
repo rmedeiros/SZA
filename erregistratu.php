@@ -23,7 +23,7 @@
 		<script type="text/javascript" src="js/futbolTaldeak.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/estiloa.css">
 	</head>
-	<body onload = "startTimer()">
+	<body id='akta' onload = "startTimer()">
 	 <div>
 	   <h style="font-size:60px"> TALDEAREN DATUAK </h>
 	  <br>		
@@ -35,6 +35,10 @@
 		<br>
 		Pasahitza<br>
 		<input id="pasahitza" type="password" name="pasahitza" onkeydown="return checkbox()">
+		<br>
+		<br>
+		Taldearen Izena<br>
+		<input id="taldea" type="text" name="taldea" onkeydown="return checkbox()">
 		<br>
 		<br>
 		Zure taldearen kodea(Taldea sortzean jaso zenuena):<br>

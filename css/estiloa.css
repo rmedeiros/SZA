@@ -4,7 +4,9 @@ h1 {
 }
 
 body {
+	
 	margin: 0px;
+	text-align:center;
 }
 
 #header {
@@ -76,7 +78,10 @@ input#jokalari{
 	width:400px;
 	
 }
-
+#akta{
+	background-color: #73AD21;
+	
+}
 
 button#gorde {
 

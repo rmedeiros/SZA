@@ -8,7 +8,7 @@
 				
 	foreach($erabiltzaileak->erabiltzailea as $erabiltzailea){
  			if($erabiltzailea->eposta==$_POST['eposta'] && $erabiltzailea->pasahitza==$_POST['pasahitza']){
-				header('Location: ');
+				echo "aaaaaa";
 			}	
 			
 		}

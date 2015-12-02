@@ -11,20 +11,20 @@
 	<div id="header">
 		<h1>EHU/if-eko futbol liga</h1>
 		<ul>
-			<li><a href="erregistratu.html">Erregistratu</a></li>
+			<li><a href="erregistratu.php">Erregistratu</a></li>
 			<li><a href="#">Emaitzak</a></li>
 			<li><a href="#">Klasifikazioa</a></li>
 		</ul>
 	</div>
 	<div id="nav">
-		<form method="post" enctype="multipartform-data" id="iruzkinak" name="iruzkinak" onSubmit="return ikusIruzkinak()">
+		<form method="post" enctype="multipartform-data" id="iruzkinak" name="iruzkinak" action="login.php" onSubmit="return ikusIruzkinak()">
 			<h3>Ikusi zure taldearen datuak</h3>
 			Eposta<br>
-			<input id="eposta" type="text" name="Eposta" onkeydown="return checkbox()">
+			<input id="eposta" type="text" name="eposta" onkeydown="return checkbox()">
 			<br>		
 			<br>
 			Pasahitza<br>
-			<input id="pasahitza" type="password" name="Pasahitza">
+			<input id="pasahitza" type="password" name="pasahitza">
 			<br>		
 			<br>
 			<input id="bidali" name="Bidali" type="submit" value="Bidali">
