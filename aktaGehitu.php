@@ -4,23 +4,21 @@
 		<title></title>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 		<!-- Ez ahaztu zure javascript fitxategiaren izena script etiketaren src atributuan zehazten. -->
-		<script type="text/javascript" src="js/futbolTaldeak.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/estiloa.css">
+		<link rel="stylesheet" type="text/css" href="css/estiloa.css"/>
 	</head>
-	<body onload = "startTimer()">
+	<body id='aktaGehitu'>
 	 <div>
-	   <h style="font-size:60px"> PARTIDUAREN AKTA </h>
-	  <br>		
-	  <br>
-	 <form   id="akta" name="akta" method="post" action="">
-		Partidua:<br><br>
-		<input id="talde1" type="text" name="talde1">  -  <input id="talde2" type="text" name="talde2"/>
-		<br>		
-		<br>
-		Emaitza:<br><br>
-		<input id="emaitza1" type="text" name="emaitza1">  -  <input id="emaitza2" type="text" name="emaitza2"/>
-		<br>		
-		<br>
+	   <p style="font-size:60px"> PARTIDUAREN AKTA </p>
+	  
+	 <form   id="akta" method="post" action="">
+		<p>Partidua:</p>
+		<input id="talde1" type="text" name="talde1" required />  -  <input id="talde2" type="text" name="talde2" required />	
+		</br>
+		</br/>
+		<p>Emaitza:</p>
+		<input id="emaitza" type="text" name="emaitza1" required />  -  <input id="emaitza" type="text" name="emaitza2" required />
+		</br>		
+		</br>
 		<table id="akta">
 			<div class="jokalariak">
 			<tr>
@@ -29,13 +27,13 @@
 			</tr>
 			
 			<?php 
-			for ($i = 0; $i<6; $i++)
+			for ($i = 1; $i<6; $i++)
 				echo "<tr>
 				<td>
-					<input id='jokalari' type='text' name='jokalari1$i'/>					
+					<input id='jokalari' type='text' name='jokalari1$i' required/>					
 				</td>
 				<td>
-					<input id='jokalari' type='text' name='jokalari2$i'/>					
+					<input id='jokalari' type='text' name='jokalari2$i' required/>					
 				</td>
 			</tr>";
 			?>
@@ -47,7 +45,7 @@
 			for ($i = 6; $i<9; $i++)
 				echo "<tr>
 				<td>
-					<input id='jokalari' type='text' name='jokalari1$i'/>					
+					<input id='jokalari' type='text' name='jokalari1$i' />					
 				</td>
 				<td>
 					<input id='jokalari' type='text' name='jokalari2$i'/>					
@@ -58,13 +56,47 @@
 		<table>
 		</br>
 		</br>
-		<button id='gorde' name='gorde'>Akta gorde</button>
+		<button type='submit' id='gorde' name='gorde'>Akta gorde</button>
 	</form>
+	<div id="erantzuna"></div>
 	</br>
 	</br>
 		<a href="oinarria.html"> Hasierara itzuli </a>
-		<br>
-		<br>
+		</br>
+		</br>
 	</div>
 	</body>
 </html>
+<?php
+	$bool=true;
+	// Jaso formularioko balioak eta testuei hasierako eta amaierako hutsuneak kendu (trim).
+	if(isset($_POST['emaitza1'])&&isset($_POST['emaitza2'])&&isset($_POST['talde1'])&&isset($_POST['talde2'])){
+		for($i=1;$i<6;$i++){
+			if(isset($_POST["jokalari1$i"])||isset($_POST["jokalari2$i"])){}
+			else $bool=false;
+		}
+		if($bool){
+			$aktak = simplexml_load_file('data/aktak.xml');	
+			$akta=$aktak->addChild('akta');
+			$akta->addAttribute("akta-data",date("d-m-y"));
+			$akta->addChild("Emaitza",$_POST['emaitza1']."-".$_POST['emaitza2']);
+			$talde1=$akta->addChild("etxekoa");
+			$talde2=$akta->addChild("kanpokoa");
+			$talde2->addAttribute("izena",$_POST['talde2']);
+			$talde1->addAttribute("izena",$_POST['talde1']);
+
+			for($i=1;$i<6;$i++){
+				$talde1->addChild("jokalari",$_POST["jokalari1$i"]);
+				$talde2->addChild("jokalari",$_POST["jokalari2$i"]);
+			}
+			for($i=6;$i<9;$i++){
+				$talde1->addChild("ordezkoa",$_POST["jokalari1$i"]);
+				$talde2->addChild("ordezkoa",$_POST["jokalari2$i"]);
+			}
+			$aktak-> asXml('data/aktak.xml');
+			header("Location: oinarria.html");
+		}
+	}
+	
+	
+?>

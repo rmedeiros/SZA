@@ -78,9 +78,13 @@ input#jokalari{
 	width:400px;
 	
 }
-#akta{
+#aktaGehitu,#erregistratu{
 	background-color: #73AD21;
 	
+}
+
+#emaitza{
+	width:20px;
 }
 
 button#gorde {
