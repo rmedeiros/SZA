@@ -1,6 +1,6 @@
 <?php 
-	if(isset($_POST['eposta'])&&isset($_POST['pasahitza'])){}
-	if(!($erabiltzaileak=simplexml_load_file("data/erabiltzaileak.xml")))
+	if(isset($_GET['eposta'])&& isset($_GET['pasahitza'])){}
+	if(!($erabiltzaileak==simplexml_load_file("data/erabiltzaileak.xml")))
 			{
 				echo('<p>Errore bat gertatu da erabiltzaileak irakurtzean. Barkatu eragozpenak</p>');
 			}
