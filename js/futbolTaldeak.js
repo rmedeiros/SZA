@@ -39,16 +39,6 @@ function eremuakBalidatu(){
     return boo; 
 }
 
-function checkbox(){
-    var frm = document.getElementById("iruzkinak");
-    if (frm.elements[1].value == null || frm.elements[1].value == "" ) {
-	document.getElementById("permisua").disabled = true;
-    }
-    else {
-	document.getElementById("permisua").disabled = false;
-    }
-}
-
 function displayNextImage() {
               x = (x === images.length - 1) ? 0 : x + 1;
               document.getElementById("img").src = images[x];
@@ -67,3 +57,18 @@ function displayNextImage() {
           images[0] = "http://i0.wp.com/atombit.es/wp-content/uploads/2015/02/tienes_una_contrasena_y_lo_sabes.jpg?fit=1024%2C1024";
           images[1] = "http://www.pintzap.com/img/pics/t/600/humor-meme-ICi2cKM3ztpFGIL2o4.jpeg";
           images[2] = "https://pbs.twimg.com/profile_images/452381666649313280/1Y_pVkyh.jpeg";
+
+XMLHttpRequestObject = new XMLHttpRequest();
+XMLHttpRequestObject.onreadystatechange = function(){
+	if (XMLHttpRequestObject.readyState==4)
+	{
+		var obj = document.getElementById('nav');
+		obj.innerHTML = XMLHttpRequestObject2.responseText;
+	}
+}
+
+function egiaztatuPasahitza() {
+	var pasahitza = document.getElementById('pasahitza').value;
+	XMLHttpRequestObject2.open("GET", '../php/soapBezEgiaztatuPasahitzaAJAX.php?Pasahitza='+pasahitza, true);
+	XMLHttpRequestObject2.send();
+}
