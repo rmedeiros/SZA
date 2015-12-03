@@ -45,7 +45,7 @@
 		<br>
 	    	<br>
 	</form>
-		<a href="oinarria.html"> Hasierara itzuli </a>
+		<a href="oinarria.php"> Hasierara itzuli </a>
 		<br>
 		<br>
 	</div>

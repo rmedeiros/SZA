@@ -61,7 +61,7 @@
 	<div id="erantzuna"></div>
 	</br>
 	</br>
-		<a href="oinarria.html"> Hasierara itzuli </a>
+		<a href="oinarria.php"> Hasierara itzuli </a>
 		</br>
 		</br>
 	</div>
@@ -94,7 +94,7 @@
 				$talde2->addChild("ordezkoa",$_POST["jokalari2$i"]);
 			}
 			$aktak-> asXml('data/aktak.xml');
-			header("Location: oinarria.html");
+			header("Location: oinarria.php");
 		}
 	}
 	

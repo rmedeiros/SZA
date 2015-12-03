@@ -44,11 +44,8 @@ function eremuakBalidatu(){
 				if (res2[0].length>0) {
 					if(res2[res2.length-1].length>1) {
 						alert("kaixo");
-						XMLHttpRequestObject.open("GET", 'login.php?Eposta='+eposta, true);
-						XMLHttpRequestObject.send();
-						XMLHttpRequestObject2.open("GET", 'login.php?Pasahitza='+pasahitza, true);
-						XMLHttpRequestObject2.send();
-						return boo;
+						
+						return true;
 					}else {boo=false;}
 				}else {boo=false;}
 			}else {boo=false;}
