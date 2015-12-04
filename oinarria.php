@@ -27,9 +27,14 @@
 			}
 			
 			$(document).ready(function(){
-			$("#emaitzak").click(function(){
-        $("#nav").load("emaitzaklortu.php" );
-    });});
+				$("#emaitzak").click(function(){
+					$("#nav").load("emaitzaklortu.php" );
+				});
+				$("#klasifikazioa").click(function(){
+					$("#content").load("klasifikazioa.php" );
+				});
+	
+			});
 		</script>
 	</head>
 	<body onload="startTimer()">
@@ -37,7 +42,7 @@
 		<h1>EHU/if-eko futbol liga</h1>
 		<ul>
 			<li><a href="erregistratu.php">Erregistratu</a></li>
-			<li><a href="#">Klasifikazioa</a></li>
+			<li><a href="#" id="klasifikazioa">Klasifikazioa</a></li>
 				
 		</ul>
 	</div>
@@ -67,11 +72,52 @@
 		</ul>";
 		?>
 	</div>
+	<div id="content">
+		<table border="1" cellpadding="1" cellspacing="1">
+			<tr>
+				<th>Izena</th>
+				<th>Points</th>
+			</tr>
+			<tr>
+				<td>Batbatbat</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Bibibi</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Hiruhiruhiru</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Laulaulau</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Bostbost</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Seiseisei</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Zazpizazpi</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Zortzizortzi</td>
+				<td>0</td>
+			</tr>
+		</table>
+	</div>
 	<div id="section">
 		<!--<a href="iruzkinak.html"> Ikusi iruzkinak </a>-->
 		<br>
 		<br>
 		<img id="img" src="https://pbs.twimg.com/profile_images/452381666649313280/1Y_pVkyh.jpeg" width="300px" height="300px"/>
+		<br>
 		<a href="http://www.julioiglesias.com"/>Iragarkiak</a>
 	</div>
 	<div id="footer">

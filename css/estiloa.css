@@ -54,9 +54,17 @@ p:hover {
     color: white;
 }
 
+#content {
+	float:left;
+	padding: 30px 40px 0 0;
+	margin-left: 300px;
+}
+
 #section {
 	text-align:right;
-	padding: 20px 40px 0 0;
+	padding: 20px 0px 0 0;
+	margin-right: 50px;
+	float:right;
 }
 
 
