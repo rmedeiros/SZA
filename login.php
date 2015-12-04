@@ -14,6 +14,7 @@
 				echo"<ul>
 			<li><a href='aktaGehitu.php'>Akta Gehitu</a></li>
 			<li><a href='#'>Nire Emaitzak</a></li>
+			<li><a href='logout.php'>Log Out</a></li>
 		</ul>";
 			}	
 			

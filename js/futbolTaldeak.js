@@ -42,9 +42,7 @@ function eremuakBalidatu(){
 			var res2=res[1].split(".");
 			if(res2.length>1) {
 				if (res2[0].length>0) {
-					if(res2[res2.length-1].length>1) {
-						alert("kaixo");
-						
+					if(res2[res2.length-1].length>1) {						
 						return true;
 					}else {boo=false;}
 				}else {boo=false;}

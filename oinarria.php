@@ -9,21 +9,21 @@
 		<script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" language="javascript">
 			function login(){
-				alert("aa");
-				var xhr = new XMLHttpRequest();
-				var eposta=document.getElementById('eposta').value;
-				var pasahitza=document.getElementById('pasahitza').value;
-				
-				xhr.onreadystatechange = function(){
-					if (xhr.readyState==4)
-					{
-						document.getElementById('nav').innerHTML = xhr.responseText;
-					}
+				if(eremuakBalidatu()){
+					var xhr = new XMLHttpRequest();
+					var eposta=document.getElementById('eposta').value;
+					var pasahitza=document.getElementById('pasahitza').value;
 					
+					xhr.onreadystatechange = function(){
+						if (xhr.readyState==4)
+						{
+							document.getElementById('nav').innerHTML = xhr.responseText;
+						}
+						
+					}
+					xhr.open('GET',"login.php?pasahitza="+pasahitza+"&eposta="+eposta,true);
+					xhr.send();			
 				}
-				xhr.open('GET',"login.php?pasahitza="+pasahitza+"&eposta="+eposta,true);
-				xhr.send();			
-
 			}
 			
 			$(document).ready(function(){
