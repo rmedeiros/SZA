@@ -5,12 +5,12 @@
 			}
 		
 			$bool=false;
-			
+		echo"<table>";	
 	foreach($aktak->akta as $akta){
 			
-			echo"<li>$akta-emaitza</li>";
+			echo"<li>$akta$akta-emaitza</li>";
 
 			}	
-			
+		echo"</table>	
 		}
 ?>
