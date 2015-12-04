@@ -28,7 +28,7 @@
 			
 			$(document).ready(function(){
 				$("#emaitzak").click(function(){
-					$("#nav").load("emaitzaklortu.php" );
+					$("#content").load("emaitzaklortu.php" );
 				});
 				$("#klasifikazioa").click(function(){
 					$("#content").load("klasifikazioa.php" );

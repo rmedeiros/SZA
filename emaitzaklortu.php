@@ -7,10 +7,10 @@
 			$bool=false;
 		echo"<table>";	
 	foreach($aktak->akta as $akta){
-			
-			echo"<li>$akta$akta-emaitza</li>";
+			echo$akta->Emaitza;
+			echo"<li>$akta->emaitza</li>";
 
 			}	
-		echo"</table>	
-		}
+		echo"</table>";	
+		
 ?>
