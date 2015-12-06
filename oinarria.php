@@ -1,13 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title></title>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<!-- Ez ahaztu zure javascript fitxategiaren izena script etiketaren src atributuan zehazten. -->
+		<title>EHU/if-eko futbol liga</title>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
 		<script type="text/javascript" src="js/futbolTaldeak.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/estiloa.css">
-		<script type="text/javascript" language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script type="text/javascript" language="javascript">
+		<link rel="stylesheet" type="text/css" href="css/estiloa.css"/>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript">
 			function login(){
 				if(eremuakBalidatu()){
 					var xhr = new XMLHttpRequest();
@@ -18,9 +17,9 @@
 						if (xhr.readyState==4)
 						{
 							document.getElementById('nav').innerHTML = xhr.responseText;
-						}
-						
+						}	
 					}
+					
 					xhr.open('GET',"login.php?pasahitza="+pasahitza+"&eposta="+eposta,true);
 					xhr.send();			
 				}
@@ -30,96 +29,71 @@
 				$("#emaitzak").click(function(){
 					$("#content").load("emaitzaklortu.php" );
 				});
+				
 				$("#klasifikazioa").click(function(){
 					$("#content").load("klasifikazioa.php" );
 				});
-	
 			});
 		</script>
 	</head>
 	<body onload="startTimer()">
-	<div id="header">
-		<h1>EHU/if-eko futbol liga</h1>
-		<ul>
-			<li><a href="erregistratu.php">Erregistratu</a></li>
-			<li><a href="#" id="klasifikazioa">Klasifikazioa</a></li>
-				
-		</ul>
-	</div>
-	<div id="nav">
-	<?php	
-		session_start();
-		if(!isset($_SESSION['username'])){
-		echo"<form  id='futbola'  name='futbola'>
-			<h3>Ikusi zure taldearen datuak</h3>
-			Eposta<br>
-			<input id='eposta' type='text' name='eposta'>
-			<br>		
-			<br>
-			Pasahitza<br>
-			<input id='pasahitza' type='password' name='pasahitza'>
-			<br>		
-			<br>
-		</form>
-		<button id='bidali' name='Bidali' onClick='login()' >Bidali</button>
-			<br>
-			<br>";
-			}else
-				echo"<ul>
-			<li><a href='aktaGehitu.php'>Akta Gehitu</a></li>
-			<li><a href='#' id='emaitzak'>Nire Emaitzak</a></li>
-			<li><a href='logout.php'>Log Out</a></li>
-		</ul>";
-		?>
-	</div>
-	<div id="content">
-		<table border="1" cellpadding="1" cellspacing="1">
-			<tr>
-				<th>Izena</th>
-				<th>Points</th>
-			</tr>
-			<tr>
-				<td>Batbatbat</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>Bibibi</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>Hiruhiruhiru</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>Laulaulau</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>Bostbost</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>Seiseisei</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>Zazpizazpi</td>
-				<td>0</td>
-			</tr>
-			<tr>
-				<td>Zortzizortzi</td>
-				<td>0</td>
-			</tr>
-		</table>
-	</div>
-	<div id="section">
-		<!--<a href="iruzkinak.html"> Ikusi iruzkinak </a>-->
-		<br>
-		<br>
-		<img id="img" src="https://pbs.twimg.com/profile_images/452381666649313280/1Y_pVkyh.jpeg" width="300px" height="300px"/>
-		<br>
-		<a href="http://www.julioiglesias.com"/>Iragarkiak</a>
-	</div>
-	<div id="footer">
-	</div>
+	
+		<div id="header">
+			<h1><a href="oinarria.php">EHU/if-eko futbol liga</a></h1>
+			<ul>
+				<li><a href="erregistratu.php">Erregistratu</a></li>
+				<li><a href="#" id="klasifikazioa">Klasifikazioa</a></li>
+			</ul>
+		</div>
+		
+		<div id="nav">
+		<?php	
+			session_start();
+			if(!isset($_SESSION['username'])){
+				echo"
+				<form  id='futbola' action=''>
+					<h3>Ikusi zure taldearen datuak</h3>
+					<p>E-posta</p>
+					<input id='eposta' type='text' name='eposta' />
+					<br />		
+					<p>Pasahitza</p>
+					<input id='pasahitza' type='password' name='pasahitza' />
+					<br />
+				</form>
+				<button id='bidali' name='Bidali' onclick='login()' >Bidali</button>
+				<br />
+				<br />";
+			} else
+				echo"
+				<ul>
+					<li><a href='aktaGehitu.php'>Akta Gehitu</a></li>
+					<li><a href='#' id='emaitzak'>Nire Emaitzak</a></li>
+					<li><a href='logout.php'>Log Out</a></li>
+				</ul>";
+			?>
+		</div>
+		
+		<div id="content">
+			<h2>ONGI ETORRI!</h2>
+			<p>Ongi etorri EHUko Informatika Fakultateko futbol ligaren webgunera! Hemen zure taldeari buruzko informazioa aurkitu eta zure partiduen aktak
+			gorde ditzazkezu.</p>
+			<br/>
+			<p>Espero dugu webgunea zure gustokoa izatea, edozein iradokizun edo arazo edukiz gero, mesedez idatzi beheko e-posta helbidera.</p>
+		</div>
+		
+		<div id="section">
+			<br />
+			<br />
+			<img id="img" src="https://pbs.twimg.com/profile_images/452381666649313280/1Y_pVkyh.jpeg" width="300px" height="300px" alt="iragarkiak"/>
+			<br />
+			<a href="http://www.julioiglesias.com">Iragarkiak</a>
+		</div>
+		
+		<div id="footer">
+			<img id="ehu" src="rsz_negro_grande.jpg" alt="ehu"/>
+			<div id="eposta">
+				<p>E-posta: <a href="mailto:futbolligaehuif@ehu.eus">futbolligaehuif@ehu.eus</a></p>
+			</div>
+		</div>
+	</body>
 </html>

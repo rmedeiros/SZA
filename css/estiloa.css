@@ -1,102 +1,193 @@
-h1 {
-	font-style: italic;
-	font-size: 50px;
-}
+/* oinarria.php */
 
+html {
+	height: 100%;
+}
 body {
-	
 	margin: 0px;
-	text-align:center;
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	height: 100%;
 }
 
 #header {
     background-image: url("http://3.bp.blogspot.com/-T6h-ok-hj6o/Vgxozncmw1I/AAAAAAAALts/gg4Pe8z3n98/s1600-r/2191452.png");
     color: white;
     text-align: center;
-    padding: 20px 0 0 0;
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    padding: 0;
 	text-decoration: none;
 }
 
-#header li a {
-	color: white;
-	text-decoration: none;
+#header h1 {
+	font-style: italic;
+	font-size: 50px;
+	padding: 20px 0;
+	margin: 0;	
 }
 
-#header li a:hover {
-	color: #73AD21;
-	text-decoration: none;
-}
-
-ul {
+#header ul {
     padding: 10px;
 	background: rgba(0,0,0,0.5);
 	margin: 0px;
 }
 
-li {
+#header a {
+	color: white;
+	text-decoration: none;
+}
+
+#header li {
 	display: inline;
 	padding: 0px 10px 0px 10px;
-	
+}
+
+#header a:hover {
+	color: #73AD21;
+	text-decoration: none;
 }
 
 #nav {
 	background-color: #73AD21;
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    height:350px;
+	height: 100%;
     width:280px;
     float:left;
-    padding:15px 0px 30px 0px;
 	text-align:center;	
 }
 
-p:hover {
-    color: white;
+#nav p {
+	margin: 30px 10px 5px 10px;
+}
+
+#nav button {
+	margin: 20px;
+}
+
+#nav h3 {
+	margin: 65px 35px 35px 35px;
+}
+
+#nav ul {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 65px 0;
+}
+
+#nav li {
+	padding: 15px 0;
+}
+
+#nav li a {
+	color: white;
+	text-decoration: none;
+}
+
+#nav li a:hover {
+	color: black;
+	text-decoration: none;
 }
 
 #content {
 	float:left;
-	padding: 30px 40px 0 0;
-	margin-left: 300px;
+	padding-top: 35px;
+	margin-left: 240px;
+	width: 360px;
+}
+
+#content h2 {
+	text-align: center;
+}
+
+#content td {
+	padding: 5px;
+}
+
+#content li {
+	text-decoration: none;
 }
 
 #section {
 	text-align:right;
-	padding: 20px 0px 0 0;
+	padding: 0;
 	margin-right: 50px;
 	float:right;
 }
 
-
-table#akta{
-	padding-bottom: 1em;
-	border-collapse: collapse;
-	width:1000px;
-}
-table#akta,td ,th{
-	margin-left:auto;
-	margin-right:auto;
-	border:2px solid black;
-	padding-bottom: 5px;
-	padding-top: 5px;
+#footer {
+	background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:10px;
+	position: fixed; 
+	bottom: 0; 
+	width:100%;
 }
 
-
-input#jokalari{
-	width:400px;
-	
+#footer #ehu {
+	padding: 0;
+	float: left;
 }
-#aktaGehitu,#erregistratu{
+
+#footer #eposta {
+	padding-top: 20px;
+	font-size: 20px;
+	float: center;
+}
+
+#footer #eposta p {
+	margin: 0;
+}
+
+#eposta a {
+	text-decoration: none;
+	color: #73AD21;
+}
+
+#eposta a:hover {
+	text-decoration: none;
+	color: grey;
+}
+
+/* aktaGehitu.php, erregistratu.php */
+
+#aktaGehitu, #erregistro {
 	background-color: #73AD21;
-	
+	float:center;
+	text-align:center;
 }
 
-#emaitza{
+#aktaGehitu h1, #erregistro h1 {
+	font-style: italic;
+	color: white;
+}
+
+#erregistro p {
+	margin: 30px 10px 10px 10px;
+}
+
+#emaitza1, #emaitza2 {
 	width:20px;
 }
 
-button#gorde {
+#akta table {
+	padding-bottom: 1em;
+	border-collapse: collapse;
+	width:1000px;
+	background-color: white;
+}
 
+#akta table, td, th {
+	margin: 0 auto;
+	padding: 5px 0;
+	border:2px solid black;
+	font-style: italic;
+}
+
+#jokalari {
+	width:400px;
+}
+
+button#gorde {
   background: #d134d9;
   background-image: -webkit-linear-gradient(top, #d134d9, #b82c66);
   background-image: -moz-linear-gradient(top, #d134d9, #b82c66);
