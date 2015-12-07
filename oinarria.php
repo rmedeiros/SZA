@@ -43,6 +43,7 @@
 			<ul>
 				<li><a href="erregistratu.php">Erregistratu</a></li>
 				<li><a href="#" id="klasifikazioa">Klasifikazioa</a></li>
+				<li><a href="oinarria.php">Home</a></li>
 			</ul>
 		</div>
 		
@@ -66,6 +67,7 @@
 			} else
 				echo"
 				<ul>
+					<li>".$_SESSION['taldea']."</li>	
 					<li><a href='aktaGehitu.php'>Akta Gehitu</a></li>
 					<li><a href='#' id='emaitzak'>Nire Emaitzak</a></li>
 					<li><a href='logout.php'>Log Out</a></li>

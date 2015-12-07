@@ -11,7 +11,9 @@
  			if($erabiltzailea->eposta==$_GET['eposta'] && $erabiltzailea->pasahitza==$_GET['pasahitza']){
 				$bool=true;
 				$_SESSION['username']=$_GET['eposta'];
+				$_SESSION['taldea']=(string)$erabiltzailea->taldea;
 				echo"<ul>
+			<li>".$_SESSION['taldea']."</li>	
 			<li><a href='aktaGehitu.php'>Akta Gehitu</a></li>
 			<li><a href='#'>Nire Emaitzak</a></li>
 			<li><a href='logout.php'>Log Out</a></li>

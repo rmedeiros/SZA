@@ -66,6 +66,7 @@
 </html>
 
 <?php
+	session_start();
 	$bool=true;
 	// Jaso formularioko balioak eta testuei hasierako eta amaierako hutsuneak kendu(trim).
 	if(isset($_POST['emaitza1'])&&isset($_POST['emaitza2'])&&isset($_POST['talde1'])&&isset($_POST['talde2'])){
@@ -74,27 +75,42 @@
 			else $bool=false;
 		}
 		if($bool){
-			$aktak = simplexml_load_file('data/aktak.xml');	
-			$akta=$aktak->addChild('akta');
-			$akta->addAttribute("akta-data",date("d-m-y"));
-			$akta->addChild("emaitza",$_POST['emaitza1']."-".$_POST['emaitza2']);
-			$talde1=$akta->addChild("etxekoa");
-			$talde2=$akta->addChild("kanpokoa");
-			$talde2->addAttribute("izena",$_POST['talde2']);
-			$talde1->addAttribute("izena",$_POST['talde1']);
+			$link = new mysqli("localhost","root","","klasifikazioa");
+			//$link = new mysqli("mysql.hostinger.es","u275359965_root","dhroot","u526113874_klasifikazioa");
 
-			for($i=1;$i<6;$i++){
-				$talde1->addChild("jokalari",$_POST["jokalari1$i"]);
-				$talde2->addChild("jokalari",$_POST["jokalari2$i"]);
+			if($link->error) 
+			{
+			die( "Huts egin du konexioak MySQL-ra: (". 
+			$link->error);
 			}
-			
-			for($i=6;$i<9;$i++){
-				$talde1->addChild("ordezkoa",$_POST["jokalari1$i"]);
-				$talde2->addChild("ordezkoa",$_POST["jokalari2$i"]);
+			$taldea1 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde1']."'");
+			$taldea2 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde2']."'");	
+			echo $_SESSION['taldea'];
+			if(($taldea1 && $_SESSION['taldea']==$_POST['talde2'])||($taldea2 && $_SESSION['taldea']==$_POST['talde1'])){
+				$aktak = simplexml_load_file('data/aktak.xml');	
+				$akta=$aktak->addChild('akta');
+				$akta->addAttribute("akta-data",date("d-m-y"));
+				$akta->addChild("emaitza",$_POST['emaitza1']."-".$_POST['emaitza2']);
+				$talde1=$akta->addChild("etxekoa");
+				$talde2=$akta->addChild("kanpokoa");
+				$talde2->addAttribute("izena",$_POST['talde2']);
+				$talde1->addAttribute("izena",$_POST['talde1']);
+
+				for($i=1;$i<6;$i++){
+					$talde1->addChild("jokalari",$_POST["jokalari1$i"]);
+					$talde2->addChild("jokalari",$_POST["jokalari2$i"]);
+				}
+				
+				for($i=6;$i<9;$i++){
+					$talde1->addChild("ordezkoa",$_POST["jokalari1$i"]);
+					$talde2->addChild("ordezkoa",$_POST["jokalari2$i"]);
+				}
+				
+				$aktak-> asXml('data/aktak.xml');
+				header("Location: oinarria.php");
+			}else{
+				echo"<p style='color:red'>Sartu dituzun taldeak ez dira zuzenak</p>";
 			}
-			
-			$aktak-> asXml('data/aktak.xml');
-			header("Location: oinarria.php");
 		}
 	}
 ?>

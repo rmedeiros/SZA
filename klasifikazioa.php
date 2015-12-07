@@ -9,7 +9,11 @@ session_start();
 			$link->error	);
 	}
 	$klasifikazioa =$link -> query("SELECT taldea,puntuak FROM klasifikazioa order by puntuak desc");
-	echo"<table id = 'klasifikazioa'>";
+	echo"<table id = 'klasifikazioa'>
+		<tr>
+			<th>Taldea</th>
+			<th>Puntuak</th>
+		</tr>";
 	while ($row = mysqli_fetch_assoc($klasifikazioa)){
 			echo "
 			<tr>
