@@ -4,15 +4,16 @@
 		<title>Akta gehitu</title>
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 		<link rel="stylesheet" type="text/css" href="css/estiloa.css"/>
+		<script type="text/javascript" src="js/futbolTaldeak.js"></script>
 	</head>
 	<body id='aktaGehitu'>
 		<h1>PARTIDUAREN AKTA</h1>
-		<form id="akta" method="post" action="">
+		<form id="akta" method="post" action="" onsubmit="return emaitzakBalidatu()">
 			<p>Partidua</p>
 			<input id="talde1" type="text" name="talde1" required />  -  <input id="talde2" type="text" name="talde2" required />	
 			<br />
 			<p>Emaitza</p>
-			<input id="emaitza1" type="text" name="emaitza1" required />  -  <input id="emaitza2" type="text" name="emaitza2" required />
+			<input id="emaitza1" type="number" name="emaitza1" required />  -  <input id="emaitza2" type="number" name="emaitza2" required />
 			<br />		
 			<br />
 			<table>
@@ -67,6 +68,9 @@
 
 <?php
 	session_start();
+	if(!isset($_SESSION['username'])){
+		header("Location: oinarria.php");
+	}
 	$bool=true;
 	// Jaso formularioko balioak eta testuei hasierako eta amaierako hutsuneak kendu(trim).
 	if(isset($_POST['emaitza1'])&&isset($_POST['emaitza2'])&&isset($_POST['talde1'])&&isset($_POST['talde2'])){
