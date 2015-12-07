@@ -84,18 +84,38 @@
 			$link->error);
 			}
 			$taldea1 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde1']."'");
-			$taldea2 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde2']."'");	
+			$taldea2 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde2']."'");
+			$emaitza1=$_POST['emaitza1'];
+			$emaitza2=$_POST['emaitza2'];
 			echo $_SESSION['taldea'];
 			if(($taldea1 && $_SESSION['taldea']==$_POST['talde2'])||($taldea2 && $_SESSION['taldea']==$_POST['talde1'])){
+				
 				$aktak = simplexml_load_file('data/aktak.xml');	
 				$akta=$aktak->addChild('akta');
 				$akta->addAttribute("akta-data",date("d-m-y"));
-				$akta->addChild("emaitza",$_POST['emaitza1']."-".$_POST['emaitza2']);
+				$akta->addChild("emaitza",$emaitza1."-".$emaitza2);
 				$talde1=$akta->addChild("etxekoa");
 				$talde2=$akta->addChild("kanpokoa");
 				$talde2->addAttribute("izena",$_POST['talde2']);
 				$talde1->addAttribute("izena",$_POST['talde1']);
 
+				//Puntuazioen eguneraketa.
+				if($emaitza1>$emaitza2){
+					if ($link->query("update klasifikazioa set puntuak=puntuak+3 where taldea='".$_POST['talde1']."'") != TRUE) {
+						echo "Errorea puntuak eguneratzean: " . $link->error;
+					}
+				}else if($emaitza1<$emaitza2){
+					if ($link->query("update klasifikazioa set puntuak=puntuak+3 where taldea='".$_POST['talde2']."'") != TRUE) {
+						echo "Errorea puntuak eguneratzean: " . $link->error;
+					}
+				}else{
+					if (($link->query("update klasifikazioa set puntuak=puntuak+1 where taldea='".$_POST['talde1']."'")!= TRUE)||
+						($link->query("update klasifikazioa set puntuak=puntuak+1 where taldea='".$_POST['talde2']."'")!= TRUE)){
+						echo "Errorea puntuak eguneratzean: " . $link->error;
+					}
+				}
+				
+				
 				for($i=1;$i<6;$i++){
 					$talde1->addChild("jokalari",$_POST["jokalari1$i"]);
 					$talde2->addChild("jokalari",$_POST["jokalari2$i"]);
