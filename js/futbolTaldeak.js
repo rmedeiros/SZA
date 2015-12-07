@@ -114,10 +114,12 @@ function eremuakBalidatuErregistratu(){
 function emaitzakBalidatu(){
 	var emaitza1= document.getElementById('emaitza1').value;
 	var emaitza2= document.getElementById('emaitza2').value;
-	if(emaitza1<0 || emaitza2<0){
-		alert("Emaitza ezin da negatiboa izan");
+	var re = new RegExp("[0-9]+");
+	if(!(re.test(emaitza1))||!(re.test(emaitza2))){
+		alert("Emaitzak positiboak edo 0 izen behar dira");
 		return false;
 	}
+	
 	return true;
 }
 		  

@@ -9,60 +9,61 @@
 	<body id='aktaGehitu'>
 		<h1>PARTIDUAREN AKTA</h1>
 		<form id="akta" method="post" action="" onsubmit="return emaitzakBalidatu()">
-			<p>Partidua</p>
-			<input id="talde1" type="text" name="talde1" required />  -  <input id="talde2" type="text" name="talde2" required />	
-			<br />
-			<p>Emaitza</p>
-			<input id="emaitza1" type="number" name="emaitza1" required />  -  <input id="emaitza2" type="number" name="emaitza2" required />
-			<br />		
-			<br />
-			<table>
-				<tr>
-					<th>Jokalariak</th>
-					<th>Jokalariak</th>
-				</tr>
-				
-				<?php 
-					for ($i = 1; $i<6; $i++)
+			<div>
+				<p>Partidua</p>
+				<input id="talde1" type="text" name="talde1"  />  -  <input id="talde2" type="text" name="talde2"  />	
+				<br />
+				<p>Emaitza</p>
+				<input id="emaitza1" type="text" name="emaitza1"  />  -  <input id="emaitza2" type="text" name="emaitza2"  />
+				<br />		
+				<br />
+				<table>
+					<tr>
+						<th>Jokalariak</th>
+						<th>Jokalariak</th>
+					</tr>
+					
+					<?php 
+						for ($i = 1; $i<6; $i++)
+							echo "
+							<tr>
+								<td>
+									<input class='jokalari' type='text' name='jokalari1$i'/>					
+								</td>
+								<td>
+									<input class='jokalari' type='text' name='jokalari2$i'  />					
+								</td>
+							</tr>";
+					?>
+					
+					<tr>
+						<th>Ordezkoak</th>
+						<th>Ordezkoak</th>
+					</tr>
+					
+					<?php
+					for ($i = 6; $i<9; $i++)
 						echo "
 						<tr>
 							<td>
-								<input id='jokalari' type='text' name='jokalari1$i' required />					
+								<input class='jokalari' type='text' name='jokalari1$i' />					
 							</td>
 							<td>
-								<input id='jokalari' type='text' name='jokalari2$i' required />					
+								<input class='jokalari' type='text' name='jokalari2$i' />					
 							</td>
 						</tr>";
-				?>
-				
-				<tr>
-					<th>Ordezkoak</th>
-					<th>Ordezkoak</th>
-				</tr>
-				
-				<?php
-				for ($i = 6; $i<9; $i++)
-					echo "
-					<tr>
-						<td>
-							<input id='jokalari' type='text' name='jokalari1$i' />					
-						</td>
-						<td>
-							<input id='jokalari' type='text' name='jokalari2$i' />					
-						</td>
-					</tr>";
-				?>
-			</table>
-			<br />
-			<br />
-			<button type='submit' id='gorde' name='gorde'>Akta gorde</button>
+					?>
+				</table>
+				<br />
+				<br />
+				<button type='submit' id='gorde' name='gorde'>Akta gorde</button>
+				<br/>
+				<br/>
+			</div>
 		</form>
-		<div id="erantzuna"></div>
-		<br />
-		<br />
-		<a href="oinarria.php">Hasierara itzuli</a>
-		<br />
-		<br />
+		<div>
+			<a href="oinarria.php">Hasierara itzuli</a>
+		</div>
 	</body>
 </html>
 
