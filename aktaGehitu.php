@@ -91,9 +91,7 @@
 			$taldea2 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde2']."'");
 			$emaitza1=$_POST['emaitza1'];
 			$emaitza2=$_POST['emaitza2'];
-			echo $_SESSION['taldea'];
-			if(($taldea1 && $_SESSION['taldea']==$_POST['talde2'])||($taldea2 && $_SESSION['taldea']==$_POST['talde1'])){
-				
+			if(($taldea1 && $_SESSION['taldea']==$_POST['talde2'])||($taldea2 && $_SESSION['taldea']==$_POST['talde1'])){				
 				$aktak = simplexml_load_file('data/aktak.xml');	
 				$akta=$aktak->addChild('akta');
 				$akta->addAttribute("akta-data",date("d-m-y"));
