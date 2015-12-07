@@ -128,22 +128,22 @@ body {
 	float: left;
 }
 
-#footer #eposta {
+#footer #emaila {
 	padding-top: 20px;
 	font-size: 20px;
 	float: center;
 }
 
-#footer #eposta p {
+#footer #emaila p {
 	margin: 0;
 }
 
-#eposta a {
+#emaila a {
 	text-decoration: none;
 	color: #73AD21;
 }
 
-#eposta a:hover {
+#emaila a:hover {
 	text-decoration: none;
 	color: grey;
 }

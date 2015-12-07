@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/estiloa.css"/>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript">
+		
 			function login(){
 				if(eremuakBalidatu()){
 					var xhr = new XMLHttpRequest();
@@ -53,25 +54,27 @@
 			if(!isset($_SESSION['username'])){
 				echo"
 				<form  id='futbola' action=''>
-					<h3>Ikusi zure taldearen datuak</h3>
-					<p>E-posta</p>
-					<input id='eposta' type='text' name='eposta' />
-					<br />		
-					<p>Pasahitza</p>
-					<input id='pasahitza' type='password' name='pasahitza' />
-					<br />
+					<div>
+						<h3>Ikusi zure taldearen datuak</h3>
+						<p>E-posta</p>
+						<input id='eposta' type='text' name='eposta'></input>		
+						<p>Pasahitza</p>
+						<input id='pasahitza' type='password' name='pasahitza'></input>	
+					</div>
 				</form>
 				<button id='bidali' name='Bidali' onclick='login()' >Bidali</button>
-				<br />
-				<br />";
+				";
 			} else
 				echo"
-				<ul>
-					<li>".$_SESSION['taldea']."</li>	
-					<li><a href='aktaGehitu.php'>Akta Gehitu</a></li>
-					<li><a href='#' id='emaitzak'>Nire Emaitzak</a></li>
-					<li><a href='logout.php'>Log Out</a></li>
-				</ul>";
+				<div>
+					<ul>
+						<li>".$_SESSION['taldea']."</li>	
+						<li><a href='aktaGehitu.php'>Akta Gehitu</a></li>
+						<li><a href='#' id='emaitzak'>Nire Emaitzak</a></li>
+						<li><a href='logout.php'>Log Out</a></li>
+					</ul>
+				</div>";
+				
 			?>
 		</div>
 		
@@ -84,16 +87,16 @@
 		</div>
 		
 		<div id="section">
-			<br />
-			<br />
+			<br/>
+			<br/>
 			<img id="img" src="https://pbs.twimg.com/profile_images/452381666649313280/1Y_pVkyh.jpeg" width="300px" height="300px" alt="iragarkiak"/>
-			<br />
+			<br/>
 			<a href="http://www.julioiglesias.com">Iragarkiak</a>
 		</div>
 		
 		<div id="footer">
 			<img id="ehu" src="rsz_negro_grande.jpg" alt="ehu"/>
-			<div id="eposta">
+			<div id="emaila">
 				<p>E-posta: <a href="mailto:futbolligaehuif@ehu.eus">futbolligaehuif@ehu.eus</a></p>
 			</div>
 		</div>
