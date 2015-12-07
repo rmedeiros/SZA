@@ -2,9 +2,9 @@
 session_start();
 	 
 	$link = new mysqli("localhost","root","","klasifikazioa");
-	//$link = new mysqli("mysql.hostinger.es","u526113874_rb15","123456789","u526113874_quiz");
+	//$link = new mysqli("mysql.hostinger.es","u275359965_root","dhroot","u526113874_klasifikazioa");
 	
-	if($link->connect_errno) {
+	if($link->error) {
 			die( "Huts egin du konexioak MySQL-ra: (". 
 			$link->error	);
 	}

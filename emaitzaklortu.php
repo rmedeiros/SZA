@@ -5,10 +5,21 @@
 			}
 		
 			$bool=false;
-		echo"<table>";	
+		echo"<table>
+			<tr>
+				<th>Etxekoa</th>
+				<th>Emaitza</th>
+				<th>Kanpokoa</th>
+			</tr>
+		";
+		
 	foreach($aktak->akta as $akta){
-			echo$akta->Emaitza;
-			echo"<li>$akta->emaitza</li>";
+			echo"<tr>
+					<td>".$akta->etxekoa['izena']."</td>
+					<td>".$akta->Emaitza."</td>
+					<td>".$akta->kanpokoa['izena']."</td>
+				</tr>";
+			
 
 			}	
 		echo"</table>";	

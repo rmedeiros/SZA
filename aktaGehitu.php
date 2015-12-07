@@ -79,7 +79,7 @@
 			$aktak = simplexml_load_file('data/aktak.xml');	
 			$akta=$aktak->addChild('akta');
 			$akta->addAttribute("akta-data",date("d-m-y"));
-			$akta->addChild("Emaitza",$_POST['emaitza1']."-".$_POST['emaitza2']);
+			$akta->addChild("emaitza",$_POST['emaitza1']."-".$_POST['emaitza2']);
 			$talde1=$akta->addChild("etxekoa");
 			$talde2=$akta->addChild("kanpokoa");
 			$talde2->addAttribute("izena",$_POST['talde2']);

@@ -1,19 +1,5 @@
 
-<?php
-	
-	// Jaso formularioko balioak eta testuei hasierako eta amaierako hutsuneak kendu (trim).
-	if(isset($_POST['eposta'])&&isset($_POST['pasahitza'])){
-	$eposta=trim($_POST['eposta']);
-	$pasahitza=trim($_POST['pasahitza']);
-	
-	$erabiltzaileak = simplexml_load_file('data/erabiltzaileak.xml');	
-	$erabiltzailea=$erabiltzaileak->addChild('erabiltzailea');
-	$erabiltzailea->addAttribute("erregistro-data",date("d-m-y"));
-	$erabiltzailea->addChild("eposta",$eposta);
-	$erabiltzailea->addChild("pasahitza",$pasahitza);
-	$erabiltzaileak-> asXml('data/erabiltzaileak.xml');
-	}
-?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -23,28 +9,63 @@
 		<script type="text/javascript" src="js/futbolTaldeak.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/estiloa.css">
 	</head>
-	<body id='erregistratu' onload = "startTimer()">
+	<body id='erregistratu'>
 	 <div>
 	   <h style="font-size:60px"> TALDEAREN DATUAK </h>
 	  <br>		
 	  <br>
-	 <form   id="iruzkinak" name="iruzkinak" method="post" onsubmit="eremuakBalidatu()" action="" enctype="multipartform-data">
+	 <form   id="erregistratufrm" name="erregistratufrm" method="post" onsubmit="return eremuakBalidatuErregistratu()" action="" enctype="multipartform-data">
 		Eposta<br>
-		<input id="eposta" type="eposta" name="eposta">
+		<input id="eposta" type="eposta" name="eposta" ></input>
 		<br>		
 		<br>
 		Pasahitza<br>
-		<input id="pasahitza" type="password" name="pasahitza" onkeydown="return checkbox()">
+		<input id="pasahitza" type="password" name="pasahitza" ></input>
 		<br>
 		<br>
 		Zure taldearen kodea(Taldea sortzean jaso zenuena):<br>
-		<input id="kodea" name="kodea" type="text"></input>
+		<input id="kodea" name="kodea" type="text" ></input>
 		<br>
 		<br>
-		<input id="bidali" name="bidali" type="submit" value="Bidali">
+		<input id="bidali" name="bidali" type="submit" value="Bidali" ></input>
 		<br>
 	    	<br>
 	</form>
+	<?php
+	
+		if(isset($_POST['eposta'])&&isset($_POST['pasahitza'])&&isset($_POST['kodea']))
+		{
+			
+			$link = new mysqli("localhost","root","","klasifikazioa");
+			//$link = new mysqli("mysql.hostinger.es","u275359965_root","dhroot","u526113874_klasifikazioa");
+
+			if($link->error) 
+			{
+			die( "Huts egin du konexioak MySQL-ra: (". 
+			$link->error);
+			}
+			$kodea=$_POST['kodea'];
+			$taldea =$link ->query("SELECT taldea FROM klasifikazioa where kodea=$kodea");
+			if($taldea)
+			{
+				$row=
+				$eposta=trim($_POST['eposta']);
+				$pasahitza=trim($_POST['pasahitza']);
+				$row = mysqli_fetch_assoc($taldea);
+				$erabiltzaileak = simplexml_load_file('data/erabiltzaileak.xml');	
+				$erabiltzailea=$erabiltzaileak->addChild('erabiltzailea');
+				$erabiltzailea->addAttribute("erregistro-data",date("d-m-y"));
+				$erabiltzailea->addChild("eposta",$eposta);
+				$erabiltzailea->addChild("pasahitza",$pasahitza);
+				$erabiltzailea->addChild("taldea",$row['taldea']);
+				$erabiltzaileak-> asXml('data/erabiltzaileak.xml');
+				header("Location: oinarri.php");
+			}else{
+				echo"<p style='color:red'>Sartu duzun kodea ez dagokio gure ligako talde bati</p>";
+			}
+		}
+	
+?>
 		<a href="oinarria.php"> Hasierara itzuli </a>
 		<br>
 		<br>
