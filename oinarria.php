@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/estiloa.css"/>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript">
-		
+		/* <![CDATA[ */
 			function login(){
 				if(eremuakBalidatu()){
 					var xhr = new XMLHttpRequest();
@@ -25,15 +25,14 @@
 					xhr.send();			
 				}
 			}
-			
-			$(document).ready(function(){
-				$("#emaitzak").click(function(){
-					$("#content").load("emaitzaklortu.php" );
-				});
-				
+			/* ]]> */
+			$(document).ready(function(){				
 				$("#klasifikazioa").click(function(){
 					$("#content").load("klasifikazioa.php" );
 				});
+			});
+			$(document).on("click", '#emaitzak', function(event) { 
+				$("#content").load("emaitzaklortu.php" );
 			});
 		</script>
 	</head>

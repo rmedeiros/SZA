@@ -8,27 +8,23 @@
 		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 		<!-- Ez ahaztu zure javascript fitxategiaren izena script etiketaren src atributuan zehazten. -->
 		<script type="text/javascript" src="js/futbolTaldeak.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/estiloa.css">
+		<link rel="stylesheet" type="text/css" href="css/estiloa.css"></link>
 	</head>
 	<body id='erregistro'>
 	 <div>
 	   <h4 style="font-size:60px"> TALDEAREN DATUAK </h4>
-	 <form   id="erregistratufrm" name="erregistratufrm" method="post" onsubmit="return eremuakBalidatuErregistratu()" action="" enctype="multipartform-data">
-		Eposta<br>
-		<input id="eposta" type="eposta" name="eposta" ></input>
-		<br>		
-		<br>
-		Pasahitza<br>
-		<input id="pasahitza" type="password" name="pasahitza" ></input>
-		<br>
-		<br>
-		Zure taldearen kodea(Taldea sortzean jaso zenuena):<br>
-		<input id="kodea" name="kodea" type="text" ></input>
-		<br>
-		<br>
-		<input id="bidali" name="bidali" type="submit" value="Bidali" ></input>
-		<br>
-	    	<br>
+	 <form   id="erregistratufrm"  method="post" onsubmit="return eremuakBalidatuErregistratu()" action="" enctype="multipartform-data">
+		<div>
+			<p>Eposta</p>
+			<input id="eposta" type="text" name="eposta" ></input>
+			<p>Pasahitza</p>
+			<input id="pasahitza" type="password" name="pasahitza" ></input>
+			<p>Zure taldearen kodea(Taldea sortzean jaso zenuena):</p>
+			<input id="kodea" name="kodea" type="text" ></input>
+			<br/>
+			<br/>
+			<input id="bidali" name="bidali" type="submit" value="Bidali" ></input>
+		</div>
 	</form>
 	<?php
 	
@@ -65,9 +61,10 @@
 		}
 	
 ?>
+		<br/>
+		<br/>
 		<a href="oinarria.php"> Hasierara itzuli </a>
-		<br>
-		<br>
+
 	</div>
 	</body>
 </html>
