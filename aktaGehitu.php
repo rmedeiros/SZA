@@ -28,10 +28,10 @@
 							echo "
 							<tr>
 								<td>
-									<input class='jokalari' type='text' name='jokalari1$i'/>					
+									<input class='jokalari' id='jokalari1$i' type='text' name='jokalari1$i'/>					
 								</td>
 								<td>
-									<input class='jokalari' type='text' name='jokalari2$i'  />					
+									<input class='jokalari' id='jokalari2$i' type='text' name='jokalari2$i'  />					
 								</td>
 							</tr>";
 					?>
@@ -46,10 +46,10 @@
 						echo "
 						<tr>
 							<td>
-								<input class='jokalari' type='text' name='jokalari1$i' />					
+								<input class='jokalari' id='jokalari1$i' type='text' name='jokalari1$i' />					
 							</td>
 							<td>
-								<input class='jokalari' type='text' name='jokalari2$i' />					
+								<input class='jokalari' id='jokalari2$i' type='text' name='jokalari2$i' />					
 							</td>
 						</tr>";
 					?>
