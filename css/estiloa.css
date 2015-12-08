@@ -5,7 +5,7 @@ html {
 }
 body {
 	margin: 0px;
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: Helvetica Neue, "Helvetica", Arial, sans-serif;
 	height: 100%;
 }
 
@@ -47,7 +47,7 @@ body {
 
 #nav {
 	background-color: #73AD21;
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: Helvetica Neue, "Helvetica", Arial, sans-serif;
 	height: 100%;
     width:280px;
     float:left;
@@ -128,22 +128,34 @@ body {
 	float: left;
 }
 
-#footer #emaila {
+#footer #eposta {
 	padding-top: 20px;
 	font-size: 20px;
-	float: center;
+	margin: 0 auto;
 }
 
-#footer #emaila p {
+#footer #valid {
+	float: right;
+	margin-top: 15px;
+	margin-right: 50px;
+}
+
+#footer #validx {
+	float: right;
+	margin-top: 15px;
+	margin-right: 20px;
+}
+
+#footer #eposta p {
 	margin: 0;
 }
 
-#emaila a {
+#eposta a {
 	text-decoration: none;
 	color: #73AD21;
 }
 
-#emaila a:hover {
+#eposta a:hover {
 	text-decoration: none;
 	color: grey;
 }
@@ -152,7 +164,6 @@ body {
 
 #aktaGehitu, #erregistro {
 	background-color: #73AD21;
-	float:center;
 	text-align:center;
 }
 
@@ -166,7 +177,7 @@ body {
 }
 
 #emaitza1, #emaitza2 {
-	width:30px;
+	width:20px;
 }
 
 #akta table {

@@ -1,14 +1,13 @@
 <?php
 session_start();
 	 
-	$link = new mysqli("localhost","root","","klasifikazioa");
-	//$link = new mysqli("mysql.hostinger.es","u275359965_root","dhroot","u526113874_klasifikazioa");
+	$link = new mysqli("mysql.hostinger.es","u275359965_root","dbroot","u275359965_quiz");
 	
 	if($link->error) {
 			die( "Huts egin du konexioak MySQL-ra: (". 
 			$link->error	);
 	}
-	$klasifikazioa =$link -> query("SELECT taldea,puntuak FROM klasifikazioa order by puntuak desc");
+	$klasifikazioa =$link -> query("SELECT taldea,puntuak FROM Klasifikazioa order by puntuak desc");
 	echo"<table id = 'klasifikazioa'>
 		<tr>
 			<th>Taldea</th>

@@ -31,8 +31,7 @@
 		if(isset($_POST['eposta'])&&isset($_POST['pasahitza'])&&isset($_POST['kodea']))
 		{
 			
-			$link = new mysqli("localhost","root","","klasifikazioa");
-			//$link = new mysqli("mysql.hostinger.es","u275359965_root","dhroot","u526113874_klasifikazioa");
+			$link = new mysqli("mysql.hostinger.es","u275359965_root","dbroot","u275359965_quiz");
 
 			if($link->error) 
 			{
@@ -40,7 +39,7 @@
 			$link->error);
 			}
 			$kodea=$_POST['kodea'];
-			$taldea =$link ->query("SELECT taldea FROM klasifikazioa where kodea=$kodea");
+			$taldea =$link ->query("SELECT taldea FROM Klasifikazioa where kodea=$kodea");
 			if($taldea)
 			{
 				$row=
@@ -54,9 +53,9 @@
 				$erabiltzailea->addChild("pasahitza",$pasahitza);
 				$erabiltzailea->addChild("taldea",$row['taldea']);
 				$erabiltzaileak-> asXml('data/erabiltzaileak.xml');
-				header("Location: oinarri.php");
+				header("Location: oinarria.php");
 			}else{
-				echo"<p style='color:red'>Sartu duzun kodea ez dagokio gure ligako talde bati</p>";
+				echo"<p style='color:#b20000'>Sartu duzun kodea ez dagokio gure ligako talde bati</p>";
 			}
 		}
 	

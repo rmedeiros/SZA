@@ -80,16 +80,15 @@
 			else $bool=false;
 		}
 		if($bool){
-			$link = new mysqli("localhost","root","","klasifikazioa");
-			//$link = new mysqli("mysql.hostinger.es","u275359965_root","dhroot","u526113874_klasifikazioa");
+			$link = new mysqli("mysql.hostinger.es","u275359965_root","dbroot","u275359965_quiz");
 
 			if($link->error) 
 			{
 			die( "Huts egin du konexioak MySQL-ra: (". 
 			$link->error);
 			}
-			$taldea1 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde1']."'");
-			$taldea2 =$link ->query("SELECT taldea FROM klasifikazioa where taldea='".$_POST['talde2']."'");
+			$taldea1 =$link ->query("SELECT taldea FROM Klasifikazioa where taldea='".$_POST['talde1']."'");
+			$taldea2 =$link ->query("SELECT taldea FROM Klasifikazioa where taldea='".$_POST['talde2']."'");
 			$emaitza1=$_POST['emaitza1'];
 			$emaitza2=$_POST['emaitza2'];
 			if(($taldea1 && $_SESSION['taldea']==$_POST['talde2'])||($taldea2 && $_SESSION['taldea']==$_POST['talde1'])){				
@@ -104,16 +103,16 @@
 
 				//Puntuazioen eguneraketa.
 				if($emaitza1>$emaitza2){
-					if ($link->query("update klasifikazioa set puntuak=puntuak+3 where taldea='".$_POST['talde1']."'") != TRUE) {
+					if ($link->query("update Klasifikazioa set puntuak=puntuak+3 where taldea='".$_POST['talde1']."'") != TRUE) {
 						echo "Errorea puntuak eguneratzean: " . $link->error;
 					}
 				}else if($emaitza1<$emaitza2){
-					if ($link->query("update klasifikazioa set puntuak=puntuak+3 where taldea='".$_POST['talde2']."'") != TRUE) {
+					if ($link->query("update Klasifikazioa set puntuak=puntuak+3 where taldea='".$_POST['talde2']."'") != TRUE) {
 						echo "Errorea puntuak eguneratzean: " . $link->error;
 					}
 				}else{
-					if (($link->query("update klasifikazioa set puntuak=puntuak+1 where taldea='".$_POST['talde1']."'")!= TRUE)||
-						($link->query("update klasifikazioa set puntuak=puntuak+1 where taldea='".$_POST['talde2']."'")!= TRUE)){
+					if (($link->query("update Klasifikazioa set puntuak=puntuak+1 where taldea='".$_POST['talde1']."'")!= TRUE)||
+						($link->query("update Klasifikazioa set puntuak=puntuak+1 where taldea='".$_POST['talde2']."'")!= TRUE)){
 						echo "Errorea puntuak eguneratzean: " . $link->error;
 					}
 				}

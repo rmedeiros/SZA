@@ -39,7 +39,7 @@
 		</form>
 		<button id='bidali' name='Bidali' onClick='login()' >Bidali</button>
 			<br>
-			<br><p style='color:red'>Sartu dituzun datuak ez dira zuzenak, saiatu berriro</p>";	
+			<br><p style='color:#b20000'>Sartu dituzun datuak ez dira zuzenak, saiatu berriro</p>";	
 		}
 
 ?>
