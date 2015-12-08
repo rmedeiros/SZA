@@ -10,7 +10,7 @@ body {
 }
 
 #header {
-    background-image: url("http://3.bp.blogspot.com/-T6h-ok-hj6o/Vgxozncmw1I/AAAAAAAALts/gg4Pe8z3n98/s1600-r/2191452.png");
+    background-image: url("../img/headerimg.jpg");
     color: white;
     text-align: center;
     padding: 0;
@@ -128,7 +128,7 @@ body {
 	float: left;
 }
 
-#footer #eposta {
+#footer #posta {
 	padding-top: 20px;
 	font-size: 20px;
 	margin: 0 auto;
@@ -146,16 +146,16 @@ body {
 	margin-right: 20px;
 }
 
-#footer #eposta p {
+#footer #posta p {
 	margin: 0;
 }
 
-#eposta a {
+#posta a {
 	text-decoration: none;
 	color: #73AD21;
 }
 
-#eposta a:hover {
+#posta a:hover {
 	text-decoration: none;
 	color: grey;
 }

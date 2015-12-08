@@ -93,7 +93,7 @@
 		</div>
 		
 		<div id="footer">
-			<img id="ehu" src="rsz_negro_grande.jpg" alt="ehu"/>
+			<img id="ehu" src="img/rsz_negro_grande.jpg" alt="ehu"/>
 			<div id="valid">
 				<a href="http://jigsaw.w3.org/css-validator/check/referer">
 					<img style="border:0;width:88px;height:31px"
@@ -105,7 +105,7 @@
 				<a href="http://validator.w3.org/check?uri=referer"><img
 				src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
 			</div>
-			<div id="eposta">
+			<div id="posta">
 				<p>E-posta: <a href="mailto:futbolligaehuif@ehu.eus">futbolligaehuif@ehu.eus</a></p>
 			</div>
 		</div>
